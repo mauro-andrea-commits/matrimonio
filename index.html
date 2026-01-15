@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mauro & Andrea | Matrimonio 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #C5A47E;
+            --light-gold: #E8D7C0;
+            --dark: #1a1a1a;
+            --light: #f8f8f8;
+            --gray: #444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            min-height: 100vh;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+                url('IMAGENES/WhatsApp Image 2026-01-14 at 12.20.14 PM.jpeg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .music-control {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .music-control:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.05);
+        }
+
+        .music-control i {
+            font-size: 1.3rem;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 3rem;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .grace {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            letter-spacing: 5px;
+            color: var(--light-gold);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .ampersand {
+            font-family: 'Raleway', sans-serif;
+            color: var(--light-gold);
+            font-weight: 300;
+            margin: 0 1rem;
+        }
+
+        .date-box {
+            display: inline-block;
+            margin: 2.5rem 0;
+            padding: 1rem 2.5rem;
+            background: rgba(197, 164, 126, 0.15);
+            border: 1px solid rgba(197, 164, 126, 0.4);
+            border-radius: 2px;
+        }
+
+        .date-day {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: var(--light-gold);
+        }
+
+        .date-month {
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin: 0.5rem 0;
+        }
+
+        .date-year {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-top: 2rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 300;
+            max-width: 600px;
+        }
+
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            font-weight: 300;
+            color: var(--dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .countdown-container {
+            background: white;
+            border-radius: 10px;
+            padding: 4rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(197, 164, 126, 0.1);
+        }
+
+        .countdown-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .countdown-box {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: rgba(197, 164, 126, 0.05);
+            border-radius: 5px;
+            border: 1px solid rgba(197, 164, 126, 0.15);
+        }
+
+        .countdown-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 300;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .details-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .detail-box {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(197, 164, 126, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .detail-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .detail-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            color: var(--dark);
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 4rem auto 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: var(--gold);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            justify-content: flex-start;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-end;
+        }
+
+        .timeline-content {
+            width: 45%;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(197, 164, 126, 0.1);
+            position: relative;
+        }
+
+        .timeline-time {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            width: 16px;
+            height: 16px;
+            background: white;
+            border: 3px solid var(--gold);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .dress-code-container {
+            background: white;
+            border-radius: 10px;
+            padding: 4rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(197, 164, 126, 0.1);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .dress-code-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .color-palette {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .color-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .note-box {
+            background: rgba(197, 164, 126, 0.05);
+            border-left: 3px solid var(--gold);
+            padding: 1.5rem;
+            text-align: left;
+            margin-top: 2.5rem;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .note-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+
+        .rsvp-container {
+            background: white;
+            border-radius: 10px;
+            padding: 4rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(197, 164, 126, 0.1);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.8rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 1rem;
+            transition: border 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .submit-btn {
+            background: var(--gold);
+            color: white;
+            border: none;
+            padding: 1.2rem 3rem;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            display: block;
+            margin: 3rem auto 0;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 500;
+        }
+
+        .submit-btn:hover {
+            background: #b8946a;
+        }
+
+        .verse-container {
+            text-align: center;
+            padding: 5rem 2rem;
+            background: rgba(197, 164, 126, 0.03);
+            margin-top: 4rem;
+            border-top: 1px solid rgba(197, 164, 126, 0.1);
+            border-bottom: 1px solid rgba(197, 164, 126, 0.1);
+        }
+
+        .verse-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-style: italic;
+            color: var(--dark);
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            line-height: 1.4;
+            font-weight: 300;
+        }
+
+        .verse-ref {
+            font-size: 1.2rem;
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: var(--dark);
+            color: white;
+        }
+
+        .hashtag {
+            display: inline-block;
+            margin: 2rem 0 3rem;
+            padding: 0.8rem 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        .final-note {
+            margin-top: 3rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .nav-dots {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 90;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            background: rgba(197, 164, 126, 0.3);
+            border-radius: 50%;
+            display: block;
+            margin: 15px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background: var(--gold);
+            transform: scale(1.3);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+            
+            .countdown-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .details-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 45px;
+            }
+            
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 45px;
+            }
+            
+            .timeline-dot {
+                left: 30px;
+            }
+            
+            .music-control {
+                top: 20px;
+                left: 20px;
+            }
+            
+            .nav-dots {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            .countdown-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            section {
+                padding: 4rem 1rem;
+            }
+            
+            .countdown-container,
+            .dress-code-container,
+            .rsvp-container {
+                padding: 2.5rem 1.5rem;
+            }
+            
+            .hero-content {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Music Control -->
+    <div class="music-control" id="musicControl">
+        <i class="fas fa-play" id="musicIcon"></i>
+    </div>
+
+    <!-- Navigation Dots -->
+    <div class="nav-dots">
+        <span class="nav-dot active" data-section="hero"></span>
+        <span class="nav-dot" data-section="countdown"></span>
+        <span class="nav-dot" data-section="details"></span>
+        <span class="nav-dot" data-section="timeline"></span>
+        <span class="nav-dot" data-section="dresscode"></span>
+        <span class="nav-dot" data-section="rsvp"></span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="grace">CON LA GRACIA DE DIOS</div>
+            <h1>Mauro <span class="ampersand">&</span> Andrea</h1>
+            <div class="date-box">
+                <div class="date-day">14</div>
+                <div class="date-month">Marzo</div>
+                <div class="date-year">2026</div>
+            </div>
+            <p class="tagline">Unidos en el amor de Cristo, comenzamos nuestra vida juntos</p>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section id="countdown">
+        <h2 class="section-title">Cuenta Regresiva</h2>
+        <p class="countdown-subtitle">Cada momento nos acerca al día más importante de nuestras vidas</p>
+        <div class="countdown-container">
+            <div class="countdown-grid">
+                <div class="countdown-box">
+                    <div class="countdown-number" id="days">00</div>
+                    <div class="countdown-label">Días</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-label">Horas</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-label">Minutos</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-label">Segundos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Details Section -->
+    <section id="details">
+        <h2 class="section-title">Detalles del Día</h2>
+        <div class="details-container">
+            <div class="detail-box">
+                <div class="detail-icon">
+                    <i class="fas fa-church"></i>
+                </div>
+                <h3 class="detail-title">Ceremonia</h3>
+                <p>Bendición Sacerdotal</p>
+                <p><strong>15:00 horas</strong></p>
+            </div>
+            <div class="detail-box">
+                <div class="detail-icon">
+                    <i class="fas fa-glass-cheers"></i>
+                </div>
+                <h3 class="detail-title">Recepción</h3>
+                <p>Cóctel y Banquete</p>
+                <p><strong>16:30 horas</strong></p>
+            </div>
+            <div class="detail-box">
+                <div class="detail-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3 class="detail-title">Lugar</h3>
+                <p>Salón "La Mansión"</p>
+                <p><strong>Santa Cruz</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline">
+        <h2 class="section-title">Itinerario</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">14:00 - 14:45</div>
+                    <h3>Recepción de Invitados</h3>
+                    <p>Bienvenida con cóctel de bienvenida. Registro y entrega de recordatorios.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">15:00 - 16:00</div>
+                    <h3>Ceremonia de Bendición</h3>
+                    <p>Bendición matrimonial en presencia de Dios y nuestra comunidad de fe.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">16:30 - 18:00</div>
+                    <h3>Sesión de Fotos & Cóctel</h3>
+                    <p>Brindis y aperitivos mientras tomamos fotos con nuestros seres queridos.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">19:00 - 00:00</div>
+                    <h3>Banquete y Celebración</h3>
+                    <p>Cena, brindis, corte de pastel y celebración hasta la medianoche.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dress Code Section -->
+    <section id="dresscode">
+        <h2 class="section-title">Código de Vestimenta</h2>
+        <div class="dress-code-container">
+            <h3 class="dress-code-title">Elegante</h3>
+            <p>Para celebrar este día bendecido, crearemos una atmósfera elegante y sobria.</p>
+            
+            <div class="color-palette">
+                <div class="color-box" style="background: #8C6A5D;"></div>
+                <div class="color-box" style="background: #9A7B6D;"></div>
+                <div class="color-box" style="background: #B8A99A;"></div>
+                <div class="color-box" style="background: #D4C5B8;"></div>
+                <div class="color-box" style="background: #C5A47E;"></div>
+            </div>
+            
+            <div class="note-box">
+                <div class="note-title">
+                    <i class="far fa-heart"></i> Un Momento para Adultos
+                </div>
+                <p>Con amor y respeto, les pedimos que consideren que este es un evento diseñado principalmente para adultos, para poder disfrutar plenamente de esta bendición en tranquilidad. Agradecemos su comprensión.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp">
+        <h2 class="section-title">Confirma Tu Asistencia</h2>
+        <div class="rsvp-container">
+            <form id="rsvpForm">
+                <div class="form-group">
+                    <label for="name">Nombre completo *</label>
+                    <input type="text" id="name" placeholder="Tu nombre y apellido" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="attendance">¿Asistirás? *</label>
+                    <select id="attendance" required>
+                        <option value="">Selecciona tu respuesta</option>
+                        <option value="yes">Sí, con alegría y bendición</option>
+                        <option value="no">Lamentablemente no podré asistir</option>
+                        <option value="maybe">Todavía no estoy seguro</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="guests">Número de acompañantes adultos</label>
+                    <input type="number" id="guests" min="0" max="5" value="0">
+                    <small style="display: block; margin-top: 0.5rem; color: #666;">
+                        * Evento diseñado principalmente para adultos
+                    </small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Mensaje para los novios (opcional)</label>
+                    <textarea id="message" rows="4" placeholder="Comparte un mensaje con nosotros..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="far fa-paper-plane"></i> Enviar Confirmación
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Verse Section -->
+    <div class="verse-container">
+        <p class="verse-text">"Y sobre todas estas cosas vestíos de amor, que es el vínculo perfecto."</p>
+        <p class="verse-ref">Colosenses 3:14</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; margin-bottom: 1rem;">
+            Mauro <span style="color: var(--gold);">&</span> Andrea
+        </h2>
+        <p style="max-width: 600px; margin: 0 auto; color: rgba(255, 255, 255, 0.8);">
+            Unidos bajo la bendición de Dios para comenzar nuestra vida juntos
+        </p>
+        <div class="hashtag">#MatrimonioMauroAndrea2026</div>
+        <p class="final-note">
+            "Todo lo hizo hermoso en su tiempo" - Eclesiastés 3:11<br>
+            © 2026 · Con el amor de Cristo, Mauro y Andrea
+        </p>
+    </footer>
+
+    <!-- Audio Element -->
+    <audio id="backgroundMusic" loop>
+        <source src="MUSICA/together-as-one.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <script>
+        // Music Control
+        const musicControl = document.getElementById('musicControl');
+        const musicIcon = document.getElementById('musicIcon');
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        let isPlaying = false;
+
+        // Auto-play on user interaction
+        document.addEventListener('click', function initAudio() {
+            if (!backgroundMusic.src) {
+                backgroundMusic.src = 'MUSICA/together-as-one.mp3';
+            }
+            document.removeEventListener('click', initAudio);
+        });
+
+        musicControl.addEventListener('click', function() {
+            if (isPlaying) {
+                backgroundMusic.pause();
+                musicIcon.classList.remove('fa-pause');
+                musicIcon.classList.add('fa-play');
+            } else {
+                backgroundMusic.play().catch(e => {
+                    console.log("Audio play failed:", e);
+                    alert("Para reproducir la música, haz clic en cualquier parte de la página primero.");
+                });
+                musicIcon.classList.remove('fa-play');
+                musicIcon.classList.add('fa-pause');
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Countdown Timer
+        const weddingDate = new Date('March 14, 2026 15:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance < 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+
+        // Navigation Dots
+        const sections = document.querySelectorAll('section');
+        const navDots = document.querySelectorAll('.nav-dot');
+
+        function updateNavDots() {
+            let currentSection = '';
+            const scrollPos = window.scrollY + 100;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    currentSection = section.id;
+                }
+            });
+
+            navDots.forEach(dot => {
+                dot.classList.remove('active');
+                if (dot.getAttribute('data-section') === currentSection) {
+                    dot.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateNavDots);
+
+        // Click on dots to scroll to sections
+        navDots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                const sectionId = this.getAttribute('data-section');
+                const targetSection = document.getElementById(sectionId);
+                
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // RSVP Form Submission
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const attendance = document.getElementById('attendance').value;
+            
+            if (!name || !attendance) {
+                alert('Por favor, completa los campos requeridos.');
+                return;
+            }
+            
+            // Save to localStorage
+            const rsvpData = {
+                name: name,
+                attendance: attendance,
+                guests: document.getElementById('guests').value,
+                message: document.getElementById('message').value,
+                timestamp: new Date().toISOString()
+            };
+            
+            let existingData = JSON.parse(localStorage.getItem('weddingRSVPs')) || [];
+            existingData.push(rsvpData);
+            localStorage.setItem('weddingRSVPs', JSON.stringify(existingData));
+            
+            // Show confirmation
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            
+            if (attendance === 'yes') {
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> ¡Confirmado! Gracias';
+                alert(`Gracias ${name}. Tu confirmación ha sido recibida. ¡Dios te bendiga!`);
+            } else if (attendance === 'no') {
+                submitBtn.innerHTML = '<i class="fas fa-heart"></i> ¡Gracias por avisar!';
+                alert(`Gracias ${name} por avisarnos. Te llevaremos en nuestros corazones.`);
+            } else {
+                submitBtn.innerHTML = '<i class="fas fa-clock"></i> ¡Entendido!';
+                alert(`Gracias ${name}. Esperamos tu confirmación final.`);
+            }
+            
+            // Reset form after 3 seconds
+            setTimeout(() => {
+                document.getElementById('rsvpForm').reset();
+                document.getElementById('guests').value = '0';
+                submitBtn.innerHTML = originalText;
+            }, 3000);
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateNavDots();
+        });
+    </script>
+</body>
+</html>
